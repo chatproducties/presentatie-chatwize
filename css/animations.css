@@ -1,0 +1,191 @@
+/* ═══════════════════════════════════════════════════════════════
+   KEYFRAMES
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoom-in {
+  0% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-online {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes arrow-pulse {
+  0%, 100% { opacity: 0.35; transform: translateX(0); }
+  50% { opacity: 0.8; transform: translateX(4px); }
+}
+
+@keyframes particle-flow {
+  0% { transform: translateX(-18px); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(18px); opacity: 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SLIDE ENTER — triggered by JS adding .active
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Default: reveal-items hidden until slide becomes active */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slide.active .reveal-item {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Apply delays via inline data-delay in JS */
+
+/* Cover chat messages */
+.anim-in {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.slide.active .anim-in {
+  animation: fade-in-up 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Slide 1 avatar pulse */
+.slide[data-slide="1"].active .chat-mock {
+  animation: zoom-in 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide[data-slide="1"].active .cover-title,
+.slide[data-slide="1"].active .cover-sub,
+.slide[data-slide="1"].active .eyebrow,
+.slide[data-slide="1"].active .presenter,
+.slide[data-slide="1"].active .cover-logo {
+  animation: slide-in-left 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.slide[data-slide="1"].active .eyebrow { animation-delay: 0.1s; }
+.slide[data-slide="1"].active .cover-logo { animation-delay: 0.2s; }
+.slide[data-slide="1"].active .cover-title { animation-delay: 0.35s; }
+.slide[data-slide="1"].active .cover-sub { animation-delay: 0.5s; }
+.slide[data-slide="1"].active .presenter { animation-delay: 0.7s; }
+
+/* ─── Generic: title/subtitle/section-tag on content slides ─── */
+.slide.active .section-tag,
+.slide.active .title,
+.slide.active .subtitle {
+  animation: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.slide.active .section-tag { animation-delay: 0s; }
+.slide.active .title { animation-delay: 0.1s; }
+.slide.active .subtitle { animation-delay: 0.2s; }
+
+/* Slide 3 — takeaway */
+.slide[data-slide="3"].active .takeaway-strip {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 0.7s;
+}
+
+/* Slide 4 — insight box */
+.slide[data-slide="4"].active .insight-box {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 0.8s;
+}
+
+/* Slide 5 — quote strip */
+.slide[data-slide="5"].active .quote-strip {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 0.8s;
+}
+
+/* Slide 6 — bottom callout */
+.slide[data-slide="6"].active .bottom-callout {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 0.9s;
+}
+
+/* Slide 8 — value callout */
+.slide[data-slide="8"].active .bottom-callout {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 1.2s;
+}
+
+/* Slide 9 — stats + takeaway */
+.slide[data-slide="9"].active .stats-takeaway {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 1s;
+}
+
+/* Slide 10 — four pillars */
+.slide[data-slide="10"].active .four-pillars {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 0.9s;
+}
+
+/* Slide 10 — trust note handled via reveal-item */
+
+/* Slide 12 — bottom callout */
+.slide[data-slide="12"].active .bottom-callout-warn {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 0.9s;
+}
+
+/* Slide 13 — final quote */
+.slide[data-slide="13"].active .final-quote {
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 0.8s;
+}
+
+/* Slide 14 — demo */
+.slide[data-slide="14"].active .eyebrow,
+.slide[data-slide="14"].active .demo-title,
+.slide[data-slide="14"].active .demo-sub,
+.slide[data-slide="14"].active .browser,
+.slide[data-slide="14"].active .demo-footer {
+  animation: fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.slide[data-slide="14"].active .eyebrow { animation-delay: 0.1s; }
+.slide[data-slide="14"].active .demo-title { animation-delay: 0.25s; }
+.slide[data-slide="14"].active .demo-sub { animation-delay: 0.45s; }
+.slide[data-slide="14"].active .browser { animation-delay: 0.35s; }
+.slide[data-slide="14"].active .demo-footer { animation-delay: 0.7s; }
