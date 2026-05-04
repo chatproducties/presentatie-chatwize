@@ -109,10 +109,10 @@
     // Slide-specific animations
     const slideNum = index + 1;
     switch (slideNum) {
-      case 9:
+      case 6:
         animateCounters(slide);
         break;
-      case 14:
+      case 10:
         animateUrlTyping(slide);
         break;
     }
